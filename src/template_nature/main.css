@@ -1,0 +1,427 @@
+@font-face {
+  font-family: 'Rosemary';
+  src: url('./fonts/Rosemary-Jasmine.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   url('./fonts/Rosemary-Jasmine.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+@font-face {
+  font-family: 'Roboto Light';
+  src: url('./fonts/Roboto-Light.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url('./fonts/Roboto-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+} 
+@font-face {
+  font-family: 'Roboto Black';
+  src: url('./fonts/Roboto-Black.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+} 
+
+@font-face {
+    font-family: 'javassoul';
+    src: url('./fonts/javassoul.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  } 
+
+body {
+	background: #2d433d;
+	overflow-x: hidden;
+}
+.btn-success {
+    background-color: rgb(156 136 127);
+    border-color: #9c887f;
+}
+.font-javassoul {
+    font-family: 'javassoul';
+}
+.font-javassoul-title {
+    font-family: 'javassoul';
+    font-size: 4.5rem;
+    line-height: .5!important;
+}
+
+.font-roboto-black {
+	font-family: 'Roboto Black';
+}
+.font-roboto-light {
+	font-family: 'Roboto Light';
+}
+.font-rosemary {
+	font-family: 'Rosemary';
+}
+
+.fs-8 { font-size: 2.5rem !important; }
+.fs-9 { font-size: 3rem !important; }
+.fs-10 { font-size: 4.5rem !important; }
+
+.title-wedding {
+	color: rgb(16, 70, 54);
+	font-family: 'Roboto Light';
+}
+.name-wedding {
+	color: rgb(16, 70, 54);
+	font-family: 'Rosemary';
+	font-size: 6rem;
+	height: 7rem;
+}
+.subtitle-wedding {
+	color: rgb(16, 70, 54);
+	font-family: 'Roboto Regular';
+	font-weight: 500;
+	letter-spacing:  3px;
+} 
+.btn-open {
+	color: rgb(16, 70, 54);
+	border: 2px solid rgb(16, 70, 54);
+	font-size: 1rem;
+	font-weight: 700;
+	padding: 7px 30px;
+	animation-delay:  0.6s;
+	cursor:  pointer;
+	border-radius: 25rem;
+	animation-delay: 0.6s;
+}
+.btn-open:hover {
+	color: rgb(16, 70, 54);
+	border-color: rgb(16, 70, 54);
+	box-shadow: rgb(194, 195, 196);
+}
+
+.quotes {
+	white-space: pre-wrap;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: inherit;
+    font-style: italic;
+    line-height: 1.7;
+}
+.padding-balance {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+.font-rosemary_jasmine-title {
+    font-family: 'Rosemary';
+    font-size: 4.5rem;
+    line-height: .5!important;
+}
+svg {
+    overflow: hidden;
+}
+.shape {
+	position: relative;
+}
+.shape-fill {
+    fill: rgb(145 166 146);
+}
+.svg-cover {
+	position: absolute;
+	z-index: 1;
+	bottom: -1px;
+	left: 0;
+}
+.svg-bottom {
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	right: -1px;
+	top: -10px;
+}
+.couple-img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+.date-title {
+	font-family: 'Rosemary';
+	color: #104636;
+	font-size:4.5rem;
+	height: 50px;
+	align-self: center;
+}
+.custom-quotes p {
+	max-width: 300px;
+}
+.shapeGalleries {
+    position: absolute;
+    width: 100%;
+    display: none;
+    bottom: -80px;
+    transform: rotate(180deg);
+}
+.shapeGalleries .elementor-shape-fill {
+	fill: #ecf4ef;
+}
+.cover {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.controls-button {
+	background-color: #104636;
+	border-color: none;
+	width: 40px;
+    height: 40px;
+    position: fixed;
+    z-index: 99;
+    right: 10px;
+    top: 10px;
+    border-radius: 50%;
+    padding-top: 8px;
+}
+
+.group-gift {
+	position: fixed;
+    z-index: 99;
+    right: 10px;
+    top: 60px;
+    padding: 0!important;
+    width: auto!important;
+    background: transparent!important;
+}
+.btn-gift {
+	width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #23cba7;
+    font-size: 12px;
+}
+.popover {
+	position: absolute;
+    will-change: transform;
+    top: 10px;
+    left: -200px;
+    /* transform: translate3d(82px, 442px, 0px); */
+	z-index: 1060;
+
+    max-width: 200px;
+	font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+    word-break: normal;
+    word-spacing: normal;
+    white-space: normal;
+    line-break: auto;
+    font-size: .875rem;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 0.3rem;
+}
+.popover-header {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ebebeb;
+    border-top-left-radius: calc(0.3rem - 1px);
+    border-top-right-radius: calc(0.3rem - 1px);
+}
+.popover .popover-body {
+    font-size: 12px;
+}
+.popover-body {
+    padding: 0.5rem 0.75rem;
+    color: #212529;
+}
+.arrow:before {
+	position: absolute;
+    display: block;
+    content: "";
+    border-color: transparent;
+    border-style: solid;
+
+    top: 10px;
+    right: -8px;
+    border-width: 0.5rem 0 0.5rem 0.5rem;
+    border-left-color: rgba(0,0,0,.25);
+}
+
+.arrow:after {
+	position: absolute;
+	display: block;
+	content: "";
+	border-color: transparent;
+	border-style: solid;
+
+	top: 10px;
+    right: -8px;
+    border-width: 0.5rem 0 0.5rem 0.5rem;
+    border-left-color: #fff;
+}
+.btn-close {
+    float: right;
+    font-size: .8rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+.btn-close:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(217 217 217 / 17%);
+    opacity: 1;
+}
+
+.modal-content {
+	background-color: #ebebe3;
+}
+.container-countdown {
+	/* position: absolute; */
+	top: 10px;
+	z-index: 3;
+}
+.container-countdown .days {
+    font-size: 1.5em;
+    display: block;
+}
+.container-countdown li {
+    display: inline-block;
+    list-style-type: none;
+    font-size: 1em;
+    padding: .8em;
+    text-transform: uppercase;
+    text-align: center;
+}
+.container-countdown li span strong {
+    font-family: 'rosemary';
+	font-size: 5rem;
+    line-height: .2;
+}
+.container-countdown li span {
+    display: block;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+.container-tamu {
+	position: relative;
+	z-index: 2;
+}
+.message-head {
+	border-radius: 15px 15px 15px 15px;
+    box-shadow: 0 0 13px 1px rgba(184,180,184,.9);
+}
+.message-scroll {
+    max-height: 400px;
+    border: none;
+    background: none;
+    padding: 0 5%;
+    box-shadow: none;
+	overflow: auto;
+	padding-top: 20px;
+}
+.avatar-item {
+    width: 50px;
+    height: 50px;
+    list-style: none;
+    display: inline-block;
+    font-weight: 900;
+    border-radius: 50%;
+    padding-top: 12px;
+    margin-right: 5px;
+	background-color: rgb(171, 133, 173);
+}
+.message-arrow {
+	width: 10px;
+	height: 10px;
+	border-top: 7px solid transparent;
+	border-bottom: 7px solid transparent;
+	border-right: 7px solid white;
+	position: absolute;
+	left: -10px;
+	top: 16px;
+}
+.message-username {
+	font-size: 14px;
+	font-weight: bold;
+}
+.message-body {
+	font-size: 12px;
+}
+.form-container {
+	background-color: #f9f7f961;
+	width: 90% !important;
+	margin: 0.5rem auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	box-shadow: -1px 1px 15px 1px #ccc;
+    border-radius: 15px;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.section-footer {
+	/* padding-top: 30px !important; */
+    float: left;
+    width: 100%;
+    position: relative;
+}
+.footer {
+	font-size: 12px;
+	padding: 10px 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgb(16, 70, 54);
+}
+
+@media only screen (max-width: 600px) {
+	.title-wedding {
+		font-size: 1rem;
+	}
+	.name-wedding {
+		color: rgb(16, 70, 54);
+		font-family: 'Rosemary';
+		font-size: 5rem;
+		height: 6rem;
+	}
+	.subtitle-wedding {
+		font-size: .8rem; 
+	} 
+	.btn-open {
+		font-size: 1rem;
+		margin-top: 1.5rem !important;
+	}
+}
+@media only screen and (min-width: 600px) and (max-width: 1367px) {
+	.btn-open, .title-wedding {
+		font-size: 2.5rem;
+	}
+	.btn-open { font-weight: 500;}
+	.name-wedding {
+		font-size: 12rem;
+		height: 11.5rem;
+	}
+	.subtitle-wedding {
+		font-size: 2rem; 
+		letter-spacing:  5px;
+		margin-top: 1.2rem;
+	}
+  }
+  
