@@ -74,6 +74,22 @@ const FormMessage = () => {
         }
     };
 
+    const pastelColors = [
+        '#FFB3BA', // light pink
+        '#FFDFBA', // light peach
+        '#FFFFBA', // light yellow
+        '#BAFFC9', // light green
+        '#BAE1FF', // light blue
+        '#E0BAFF', // light purple
+      ];
+      
+      // Function to select a random color from the pastel colors array
+    function getRandomPastelColor() {
+        const randomIndex = Math.floor(Math.random() * pastelColors.length);
+        return pastelColors[randomIndex];
+    }
+      
+
     useEffect(() => {
         fetchComments();
     }, []);
@@ -94,7 +110,9 @@ const FormMessage = () => {
                         {comments.map((comment) => (
                             <Col xs={12} key={comment.id}>
                                 <div className="d-flex">
-                                    <div className="avatar-item col-3 text-capitalize">{comment.username ? comment.username.trim().charAt(0) : ''}</div>
+                                    <div className="avatar-item col-3 text-capitalize" style={{
+                                        backgroundColor: getRandomPastelColor(),
+                                    }}>{comment.username ? comment.username.trim().charAt(0) : ''}</div>
                                     <Card className="message-head text-left col px-2 pb-2">
                                         <div className="message-arrow"></div>
                                         <Card.Title className="message-username m-0 mt-2 ps-1">{comment.username}</Card.Title>
