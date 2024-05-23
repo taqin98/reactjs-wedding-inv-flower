@@ -332,8 +332,9 @@ svg {
     display: inline-block;
     font-weight: 900;
     border-radius: 50%;
-    padding-top: 12px;
+    padding-top: 10px;
     margin-right: 5px;
+    font-size: 1.2rem;
 	background-color: rgb(171, 133, 173);
 }
 .message-arrow {

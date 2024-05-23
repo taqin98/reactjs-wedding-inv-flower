@@ -279,7 +279,7 @@ export default class AppContent extends Component {
 						<img src="./assets/images/quotes_decor_nature.png" className="w-50 mx-auto" alt="Dekorasi Bunga" style={{
 							filter: 'brightness(0) invert(1)'
 						}} />
-						<Card.Body className="text-white quotes padding-balance" data-aos={includeAOS ? 'fade-up' : ''} data-aos-duration={includeAOS ? '1000' : ''}>
+						<Card.Body className="text-white quotes padding-balance pb-4" data-aos={includeAOS ? 'fade-up' : ''} data-aos-duration={includeAOS ? '1000' : ''}>
 							{this.state.quotes}
 						</Card.Body>
 						<div className="shape">

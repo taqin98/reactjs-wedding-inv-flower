@@ -120,9 +120,22 @@ const CountdownTimer = ({ includeAOS }) => {
             .ranting.left {
                 left: -65px;
             }
+            .cincin-mini {
+                position: absolute;
+                right: 0;
+                left: 0;
+                z-index: 4;
+                top: 6rem;
+            }
+            .cincin-mini img {
+                width: 50px;
+            }
             `}
             </style>
             <div id="countdown">
+                <div className="cincin-mini">
+                    <img src="./assets/images/att_ring.png" alt="bunga samping" />
+                </div>
                 <div className="bunga-mini-right">
                     <img src="./assets/images/att_flowermini.png" alt="bunga samping" className="w-100" />
                 </div>
@@ -158,7 +171,6 @@ const CountdownTimer = ({ includeAOS }) => {
                     <p className="fst-italic fs-3 mt-3">18 Juni 2024</p>
                     <p className="font-rosemary_jasmine-title fst-italic mt-3">Nisa' & Taqim</p>
                 </div>
-                <h1 className="text-center font-rosemary_jasmine-title text-gray pt-4">Save The Date</h1>
                 
             </div>
         </React.Fragment>

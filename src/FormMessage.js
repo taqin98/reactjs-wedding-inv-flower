@@ -17,17 +17,18 @@ const FormMessage = () => {
 
     const handleSendMessage = () => {
         const newMessage = {
-            username: name,
-            message: message,
+            color: getRandomPastelColor(),
+            username: name.trim(),
+            message: message.trim(),
         };
 
-        if(name === '') {
+        if(name.trim() === '') {
             setNameInvalid('Nama Tidak boleh kosong');
             setRequired(true);
             return false;
         } 
 
-        if(message === '') {
+        if(message.trim() === '') {
             setMsgInvalid('Ucapan Tidak boleh kosong');
             setRequired(true);
             return false;
@@ -70,6 +71,7 @@ const FormMessage = () => {
         } catch (error) {
             setAlertMessage('Error fetching comments:');
             console.error('Error fetching comments:', error);
+            setShowSuccessToast(false);
             setShowErrorToast(true);
         }
     };
@@ -81,7 +83,7 @@ const FormMessage = () => {
         '#BAFFC9', // light green
         '#BAE1FF', // light blue
         '#E0BAFF', // light purple
-      ];
+    ];
       
       // Function to select a random color from the pastel colors array
     function getRandomPastelColor() {
@@ -111,7 +113,7 @@ const FormMessage = () => {
                             <Col xs={12} key={comment.id}>
                                 <div className="d-flex">
                                     <div className="avatar-item col-3 text-capitalize" style={{
-                                        backgroundColor: getRandomPastelColor(),
+                                        backgroundColor: comment.color ?? '#E0BAFF',
                                     }}>{comment.username ? comment.username.trim().charAt(0) : ''}</div>
                                     <Card className="message-head text-left col px-2 pb-2">
                                         <div className="message-arrow"></div>
@@ -150,7 +152,7 @@ const FormMessage = () => {
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                             />
-                            { required && (<label className="text-danger w-100 text-start">
+                            { (required && name.trim() === '') && (<label className="text-danger w-100 text-start">
                                 <small>{nameInvalid}</small>
                             </label>) }
                         </Col>
@@ -161,7 +163,7 @@ const FormMessage = () => {
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
                             ></textarea>
-                            { required && (<label className="text-danger w-100 text-start">
+                            { (required && message.trim() === '') && (<label className="text-danger w-100 text-start">
                                 <small>{msgInvalid}</small>
                             </label>) }
                         </Col>
