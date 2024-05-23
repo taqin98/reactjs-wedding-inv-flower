@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card, Col, Row, Toast } from 'react-bootstrap';
+import { Button, Card, Col, Row } from 'react-bootstrap';
 import axios from 'axios';
 
 
 const FormMessage = () => {
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
+    const [nameInvalid, setNameInvalid] = useState('');
+    const [msgInvalid, setMsgInvalid] = useState('');
+    const [required, setRequired] = useState(false);
+    
     const [alertMessage, setAlertMessage] = useState('');
     const [showSuccessToast, setShowSuccessToast] = useState(false);
-    const [showErrorToast, setShowErrorToast] = useState(false);
+    const [showErrorToast, setShowErrorToast] = useState(true);
     const [comments, setComments] = useState([]); 
 
     const handleSendMessage = () => {
@@ -18,14 +22,14 @@ const FormMessage = () => {
         };
 
         if(name === '') {
-            setAlertMessage('Nama Tidak boleh kosong');
-            setShowErrorToast(true);
+            setNameInvalid('Nama Tidak boleh kosong');
+            setRequired(true);
             return false;
         } 
 
         if(message === '') {
-            setAlertMessage('Ucapan Tidak boleh kosong');
-            setShowErrorToast(true);
+            setMsgInvalid('Ucapan Tidak boleh kosong');
+            setRequired(true);
             return false;
         } 
 
@@ -34,6 +38,11 @@ const FormMessage = () => {
                 console.log('Message sent successfully:', response.data);
                 // Show success toast
                 setShowSuccessToast(true);
+                setTimeout(() => {
+                    setShowSuccessToast(false);
+                }, 3000);
+                setShowErrorToast(false);
+                setRequired(false);
                 fetchComments();
                 setName('');
                 setMessage('');
@@ -44,7 +53,12 @@ const FormMessage = () => {
                 setAlertMessage('Error sending message. Please try again.');
                 console.error('Error sending message:', error);
                 // Show error toast
+                setShowSuccessToast(false);
                 setShowErrorToast(true);
+                setTimeout(() => {
+                    setShowErrorToast(false);
+                }, 3000);
+                setRequired(false);
                 // Additional error handling if needed, e.g., update state
             });
     };
@@ -97,6 +111,18 @@ const FormMessage = () => {
                 </div>
                 <div className="form-container mt-2 px-4">
                     <label>Kirim Ucapan</label>
+                    {
+                        showSuccessToast && (<div className="bg-default text-success rounded mt-2">
+                            <strong>{alertMessage}</strong>
+                        </div>)
+                    }
+
+                    {
+                        showErrorToast && (<div className="bg-default text-danger rounded mt-2">
+                            <strong>{alertMessage}</strong>
+                        </div>)
+                    }
+
                     <Row className="gy-3 mt-3">
                         <Col xs={12}>
                             <input
@@ -106,6 +132,9 @@ const FormMessage = () => {
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                             />
+                            { required && (<label className="text-danger w-100 text-start">
+                                <small>{nameInvalid}</small>
+                            </label>) }
                         </Col>
                         <Col xs={12}>
                             <textarea
@@ -114,6 +143,9 @@ const FormMessage = () => {
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
                             ></textarea>
+                            { required && (<label className="text-danger w-100 text-start">
+                                <small>{msgInvalid}</small>
+                            </label>) }
                         </Col>
                         <Col xs={12}>
                             <Button
@@ -128,41 +160,6 @@ const FormMessage = () => {
 
                 </div>
             </div>
-            {/* Success Toast */}
-            <Toast
-                show={showSuccessToast}
-                onClose={() => setShowSuccessToast(false)}
-                delay={3000}
-                autohide
-                style={{
-                    position: 'fixed',
-                    top: '10vh',
-                    right: 16,
-                }}
-            >
-                <Toast.Header closeButton={false} className="bg-success text-white">
-                    <strong className="mx-auto">Yeay!</strong>
-                </Toast.Header>
-                <Toast.Body>{alertMessage}</Toast.Body>
-            </Toast>
-
-            {/* Error Toast */}
-            <Toast
-                show={showErrorToast}
-                onClose={() => setShowErrorToast(false)}
-                delay={3000}
-                autohide
-                style={{
-                    position: 'fixed',
-                    bottom: 16,
-                    right: 16,
-                }}
-            >
-                <Toast.Header closeButton={false} className="bg-danger text-white">
-                    <strong className="me-auto">Error!</strong>
-                </Toast.Header>
-                <Toast.Body>{alertMessage}</Toast.Body>
-            </Toast>
 
         </React.Fragment>
     )

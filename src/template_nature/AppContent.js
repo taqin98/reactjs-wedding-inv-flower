@@ -133,11 +133,15 @@ export default class AppContent extends Component {
 				}
 
 				.rundown {
-					{/* margin: 2rem 0 2rem 0; */}
+					background-color: #ecf4f0;
 					padding-top: 2rem;
 					padding-bottom: 1rem;
-					background-image: url(./assets/images/template_1/flower2.png);
-					{/* background-size: cover; */}
+					background-image: url(./assets/images/att_rose_max.png);
+					background-size: cover;
+					box-shadow: inset 2000px 0 0 0 rgb(255 255 255 / 70%);
+					height: 450px;
+					background-position-x: -150px;
+    				background-position-y: 180px;
 				}
 				.object-suket {
 					background-image: url(./assets/images/template_1/object-suket.png);
@@ -405,12 +409,8 @@ export default class AppContent extends Component {
 						</section>
 					</section>
 
-					<section className='pt-5 rundown cover' style={{
-						backgroundColor: "#ecf4f0",
-						backgroundImage: "url(./assets/images/bg_wayang_polos.jpeg)",
-						backgroundSize: "cover",
-					}}>
-						<Card className="bg-transparent shadow-none border-0 text-black">
+					<section className='pt-5 rundown cover'>
+						<Card className="bg-transparent shadow-none border-0 text-black mt-5">
 							<Card.Title className="font-rosemary_jasmine-title mt-4 pt-4"
 								data-aos={includeAOS ? "zoom-in" : ""} data-aos-duration={includeAOS ? '1000' : ''}
 							>Unduh Mantu</Card.Title>
@@ -489,7 +489,7 @@ export default class AppContent extends Component {
 					<FormMessage />
 					<section className="section-footer bg-primary">
 						<div className="footer w-100 text-white text-center">
-							Made with &#10084; <a href="https://www.instagram.com/taqin_taqin_/"
+							Powered by &#9786; <a href="https://www.instagram.com/taqin_taqin_/"
 								className="text-white"
 								target="_blank" rel="noreferrer">taqin</a>.
 						</div>
